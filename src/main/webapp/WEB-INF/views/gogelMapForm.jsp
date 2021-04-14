@@ -23,7 +23,7 @@
 <input type="button" value="전달하기" onclick="setText()"> 
 <input type="button" value="창닫기" onclick="window.close()"> 
 
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD8DS8TdoWivk2Lu0pMibDfp4Dyrj-hwK8"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key="></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript">
 
