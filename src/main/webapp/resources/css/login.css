@@ -1,0 +1,17 @@
+@charset "UTF-8";
+#login{ width: 450px; height: 250px; margin: auto; border: 1px solid black; border-radius: 5px; margin-top: 350px;}
+#login h2{ margin-left: 15px; }
+#login input { margin: 0 15px 15px 15px; width: 400px; height: 30px; outline: none; padding-left: 10px; }
+#login button{ margin: 0 15px; width: 415px; height: 35px; background: #444444; border: 1px solid #444444; border-raius: 5px; color: white; }
+
+/* 모바일 */
+@media (max-width:360px){
+	#login{ width: 340px; height: 250px; margin: auto; border: 1px solid black; border-radius: 5px; margin-top: 200px;}
+	#login h2{ margin-left: 15px; text-align: center; }
+	#login input { margin: 0 15px 10px 15px; width: 295px; height: 30px; outline: none; padding-left: 10px; }
+	#login button{ margin: 0 15px; width: 310px; height: 35px; background: #c32148; border: 1px solid #c32148; border-raius: 5px; color: white; } 
+}
+
+
+
+

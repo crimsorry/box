@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.yuhan.test.service.mapper.UserMapper">
+
+	<!-- 박스 요청 -->
+	<insert id="ordered">
+    	INSERT INTO ordered VALUES(#{order_code}, #{company_code}, #{box_code}, now(), #{order_cnt}, 0, "out", #{require_date}, null)
+    </insert>
+    
+    <!-- 박스 요청(in) -->
+	<insert id="orderIn">
+    	INSERT INTO ordered VALUES(#{order_code}, "admin", #{box_code}, now(), #{box_cnt}, 1, "in", null, null)
+    </insert>
+	
+	<!-- 주문번호 찾기! -->
+	<select id="findOrderNum" resultType="String">
+    	SELECT MAX(RIGHT(order_code, 4)) 
+    	FROM ordered where LEFT(order_code,6)=DATE_FORMAT(now(),'%y%m%d')
+    </select>
+    
+    <!-- 재고수 감소 -->
+    <update id="updateCnt" parameterType="PagingDTO">
+    	UPDATE box SET remain_cnt=remain_cnt-#{p.cnt} WHERE box_code=#{p2.code}
+    </update>
+
+</mapper>

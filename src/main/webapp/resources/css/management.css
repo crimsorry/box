@@ -1,0 +1,76 @@
+h2{ text-align: center; margin-top: -5px; width: 100%; }
+h5{ margin-left: 60px; margin-top: 25px;  }
+h2 a{ text-decoration: none; color: black;  }
+span a{ color: black; text-decoration: none; }
+
+/*네비게이션*/
+#navBar{ position: absolute; top: 23px; left: 22px; font-size: 1.5em; cursor: pointer; }
+#navBox{ width: 250px; height: 100%; position: absolute; top: 0; left: -250px; background: white; opacity: 0; }
+#navBox i{ margin: 20px 0 0 20px; font-size: 1.9em; cursor: pointer; }
+#navBox ul{ margin-top: 50px; margin-left: -15px; }
+#navBox ul li{  list-style: none; margin-bottom: 25px;  }
+#navBox ul li a{ text-decoration: none; color: black; font-weight: bold; }
+#navBox ul li:nth-of-type(2) a{ color: brown; }
+#navBox ul li a:hover{ border-bottom: 1px solid black; color: brown; transition: all 0.5s ease-in; }
+.noneBox{ position: absolute; width: 100%; height: 100%; top: 0; left: 0;  background: rgba(0, 0, 0, 0.5); display: none; z-index: 2; }
+
+/* 테이블 */
+#startDate, #endDate{ width: 121px; margin-left: 5px; }
+#dateSee{ width: 45px; height: 30px; margin-top: -2px; margin-left: 5px; }
+.recentBox p{ padding-top: 20px; }
+.recentBox div{ display: inline-block; vertical-align: top; margin-top: 50px; }
+.recentBox div h3{ text-align: left; margin-left: 0px; margin-top: -45px; }
+.recentBox div:last-of-type h3{margin-top: -45px; }
+.recentBox div:first-of-type, .recentBox div:last-of-type{ width: 550px; height:670px; border: 1px solid black; border-radius: 5px; }
+.recentBox div:nth-of-type(2) { width: 40px; font-weight: blod; margin-top: 370px; }
+#recent{ width: 550px; }
+#recentIn{ width: 550px; }
+.recentBox div:last-of-type #btn_box{ height:10px; border: none; margin-top: 6px; }
+.clickTr{ cursor: pointer; }
+
+table{border-collapse: collapse; width: 1155px; }
+table tr{ height: 30px;}
+#maneger td:first-of-type{ width: 50px; }
+.noneTr{ visibility: hidden; }
+#recentIn span{ float: right; margin-right: 20px; }
+
+/* 토글 */
+.tab_wrap{ width: 1200px; margin: 0 auto; }
+.tab_menu_container{ width: 1200px; margin: 0 auto; margin-top: 20px; }
+.tab_menu_container button{ 
+	width:300px; height:40px;  font-size: 15px; color:white; background: #3E3E3E; border: none;
+	cursor: pointer; outline: none; }
+.tab_box_container{text-align: center;}
+.tab_menu_container { display:flex; }
+.tab_menu_btn { width:80px; height:40px; transition:0.3s all; }
+.tab_box { display:none; padding:20px; border: 1px solid black; border-radius: 5px; }
+.tab_box:first-of-type { display:block; }
+.tab_box.on { display:block; } 
+input[type=text]{height:40px; width:200px;border:1px solid lightgray;}
+
+/* 박스구매(out) */
+.boxOut select{ width: 305px; margin-bottom: 15px; height: 42px; }
+.boxOut input{ width: 300px; margin-bottom: 15px; height: 40px; }
+.boxOut button{ width: 305px; height: 45px; }
+
+/* 신규박스입력(in) */
+.boxIn input{ width: 300px; height: 40px; margin-bottom: 15px; }
+.boxIn button{ width: 305px; height: 45px; }
+
+/*박스입고(in)*/
+.oldBoxIn select{ width: 305px; margin-bottom: 15px; height: 42px; }
+.oldBoxIn input{ width: 300px; margin-bottom: 15px; height: 42px; }
+.oldBoxIn button{ width: 305px; height: 45px; }
+
+/* 버튼 */
+#btn_box { margin: 0 auto; width: 200px; margin-top: 30px;  }
+.btns{ border: none; border-radius: 5px; background: lightgray; width: 25px; height: 25px;}
+.blankGo{ background: lightgray; color: black; }
+
+ button{ 
+	width:200px; height:30px; font-size: 15px; color:white; background: #CFA987; 
+	border: none; cursor: pointer; outline: none;} 
+
+.inbtn{ float: right; }
+.inbtn button{ top: 5px; }
+

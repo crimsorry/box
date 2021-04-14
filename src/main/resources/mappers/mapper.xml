@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.yuhan.test.service.mapper.CompanyMapper">
+    
+    <!-- 전체 리스트 -->
+    <select id="selectList" parameterType="PagingDTO" resultType="CompanyDTO">
+        SELECT company_code, use_check, company_name, company_name_eng, address, address_eng, addressA_eng, addressB_eng, tel, fex, manager_eng, 
+        email, local_manager, local_tel, local_email, remark, settlement, cur, businessNum, president, start_date, end_date, 
+        date_format(input_date, '%Y-%m-%d') as input_date, inpuner, date_format(modify_date, '%Y-%m-%d') as modify_date, 
+        modifier, lat, lng, com_password FROM company WHERE deleteChk = 0 
+        ORDER BY date_format(input_date, '%Y-%m-%d %H:%i:%S') desc LIMIT #{p.first}, #{p.cnt}
+    </select>
+    
+    <!-- 전체 리스트(페이징X) -->
+    <select id="selectComList" resultType="CompanyDTO">
+        SELECT * FROM company WHERE deleteChk = 0 ORDER BY input_date desc
+    </select>
+    
+    <!-- 전체 리스트 갯수 -->
+    <select id="cntList" resultType="int">
+    	SELECT count(*) FROM company WHERE deleteChk = 0 
+    </select>
+    
+    <!-- 상세보기 -->
+    <select id="selectOne" resultType="CompanyDTO">
+        SELECT company_code, use_check, company_name, company_name_eng, address, address_eng, addressA_eng, addressB_eng, tel, fex, manager_eng, 
+        email, local_manager, local_tel, local_email, remark, settlement, cur, businessNum, president, start_date, end_date, 
+        date_format(input_date, '%Y-%m-%d %H:%i:%S') as input_date, inpuner, date_format(modify_date, '%Y-%m-%d %H:%i:%S') as modify_date, 
+        modifier, lat, lng, com_password FROM company WHERE company_code=#{company_code}
+    </select>
+    
+    <!-- 수정하기 -->
+    <update id="updateCom">
+    	UPDATE company SET 
+    	use_check=#{use_check}, company_name=#{company_name}, company_name_eng=#{company_name_eng}, 
+    	address=#{address}, address_eng=#{address_eng}, addressA_eng=#{addressA_eng}, addressB_eng=#{addressB_eng}, 
+    	tel=#{tel}, fex=#{fex}, manager_eng=#{manager_eng}, email=#{email}, local_manager=#{local_manager}, local_tel=#{local_tel}, 
+    	local_email=#{local_email}, remark=#{remark}, settlement=#{settlement}, cur=#{cur}, businessNum=#{businessNum}, 
+    	president=#{president}, start_date=#{start_date}, end_date=#{end_date}, input_date=#{input_date}, inpuner=#{inpuner}, 
+    	modify_date=#{modify_date}, modifier=#{modifier}, lat=#{lat}, lng=#{lng} 
+    	WHERE company_code=#{company_code}
+    </update>
+    
+    <!-- 추가하기 -->
+    <insert id="insertCom">
+    	INSERT INTO Company VALUES (#{company_code}, #{use_check}, #{company_name}, #{company_name_eng}, #{address}, #{address_eng}, #{addressA_eng}, 
+    	#{addressB_eng}, #{tel}, #{fex}, #{manager_eng}, #{email}, #{local_manager}, #{local_tel}, #{local_email}, #{remark}, 
+    	#{settlement}, #{cur}, #{businessNum}, #{president}, #{start_date}, #{end_date}, #{input_date}, #{inpuner}, #{modify_date}, 
+    	#{modifier}, #{lat}, #{lng}, #{com_password}, 0)
+    </insert>
+    
+    <!-- company_code 중복체크 -->
+    <select id="multiChk" resultType="int">
+    	SELECT count(*) FROM company WHERE company_code=#{company_code}
+    </select>
+    
+    <!-- 삭제하기 -->
+    <update id="deleteCom">
+    	UPDATE company SET deleteChk = 1 WHERE company_code=#{company_code}
+    </update>
+    
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
