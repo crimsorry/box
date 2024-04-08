@@ -2,7 +2,7 @@
 유한테크노스 인턴 과제 <br>
 2021.01.21 ~ 2021.02.24  <br>
 
-![image](https://github.com/crimsorry/box/assets/31988854/70420d98-a1cd-47f8-b392-5b5dfb66c4ab)
+![image](https://github.com/crimsorry/box/assets/31988854/746343d8-ae3d-46a5-89b1-0dec238a0ee2)
 ![image](https://github.com/crimsorry/box/assets/31988854/df6483a7-d781-4e02-b7c9-f24c57ccf17b)
 ![image](https://github.com/crimsorry/box/assets/31988854/87be604e-ca66-4f1d-9522-c278701ad961)
 ![image](https://github.com/crimsorry/box/assets/31988854/071e33af-3406-459d-b8ff-7a85f17d2143)
