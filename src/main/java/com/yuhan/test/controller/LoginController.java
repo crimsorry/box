@@ -15,7 +15,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.yuhan.test.dto.BoardDTO;
 import com.yuhan.test.dto.OrderDTO;
 import com.yuhan.test.dto.PagingDTO;
 import com.yuhan.test.service.LoginService;
@@ -34,8 +33,6 @@ public class LoginController {
 		
 		p2.put("id", id);
 		p2.put("password", password);
-		System.out.println("id: " + id);
-		System.out.println("password: " + password);
 		pdto.setP2(p2);
 		
 		int idChk = service.IDChk(id); // 사용자 ID 확인(1)
@@ -48,8 +45,6 @@ public class LoginController {
 			model.addAttribute("msg", "올바르지 않은 PW입니다. 다시 확인해주세요.");
 			return "sucessChk";
 		}else {
-			System.out.println("admin: " + id);
-			System.out.println("adminpassword: " + password);
 			if(id.equals("admin") && password.equals("admin1") || id.equals("admin1") && password.equals("admin1")) {
 				session.setAttribute("company_code", id);
 				String company_name = service.ComName(id);

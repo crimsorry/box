@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.yuhan.test.service.mapper.BoardMapper">
+    
+   <!-- 전체 리스트 -->
+   <select id="boardList" parameterType="PagingDTO" resultType="BoardDTO">
+   		SELECT b.board_code, b.title, b.id, 
+   		if(date_format(now(), '%Y %m %d')>date_format(b.write_date, '%Y %m %d'), 
+   		date_format(b.write_date, '%y/%m/%d'), date_format(b.write_date, '%H:%i')) as dates, b.cnt, count(c.comment_code) as comment_code 
+        FROM board as b 
+        left join comment as c 
+        on b.board_code = c.board_code and c.chk != 1 
+        WHERE b.board_chk = 0  
+        group by b.board_code ORDER BY write_date desc LIMIT #{p.first}, #{p.cnt}
+   </select>
+   
+   <!-- 전체 리스트 갯수 -->
+    <select id="cntList" resultType="int">
+    	SELECT count(*) FROM board WHERE board_chk=0;
+    </select>
+    
+    <!-- 상세보기 -->
+    <select id="boardDetail" resultType="BoardDTO">
+        SELECT board_code, id, password, title, content, date_format(write_date, '%Y-%m-%d %T')as write_date, cnt FROM board WHERE board_code=#{board_code}
+    </select>
+    
+    <!-- 상세보기 클릭 시 조회수 증가 -->
+    <update id="updateCnt">
+    	UPDATE board SET cnt=cnt+1 WHERE board_code=#{board_code}
+    </update>
+    
+    <!-- 글쓰기 -->
+    <insert id="boardWrite">
+    	INSERT INTO board(id, password, title, content, write_date, cnt, board_chk) 
+    	VALUES (#{id}, #{password}, #{title}, #{content}, now(), 0, 0)
+    </insert>
+    
+    <!-- 전체 댓글 -->
+    <select id="commentList" parameterType="PagingDTO" resultType="BoardDTO">
+    	SELECT comment_code, comment_id, comment_content, comment_password, 
+    	date_format(comment_write_date, '%Y-%m-%d %T')as comment_write_date, re_group, re_level, re_step, chk FROM comment 
+    	WHERE board_code=#{p.code} and chk=0 or board_code=#{p.code} and chk=2 ORDER BY re_group, re_level ASC LIMIT #{p.first}, #{p.cnt}
+    </select>
+    
+    <!-- 전체 댓글 수 -->
+    <select id="commentCnt" resultType="int">
+    	SELECT count(*) FROM comment WHERE board_code=#{board_code} and chk=0 or board_code=#{board_code} and chk=2
+    </select>
+    
+    <!-- max re_group -->
+    <select id="maxGroup" resultType="int">
+    	SELECT if(max(re_group)!="", max(re_group), 0) FROM comment WHERE board_code=#{board_code}
+    </select>
+    
+    <!-- 최초 첫번째 max re_level -->
+    <select id="maxFirstLevel" resultType="int">
+    	SELECT if(max(re_level)!="", max(re_level), #{re_level}) FROM comment WHERE board_code=#{board_code} and re_group=#{re_group} and re_step=#{re_step}+1
+    </select>
+    
+    <!-- max re_level -->
+    <select id="maxLevel" resultType="int">
+    	SELECT max(re_level) FROM comment WHERE board_code=#{board_code}
+    </select>
+    
+    <!-- 대댓글 level+1-->
+    <update id="rerePlus">
+    	UPDATE comment SET re_level = re_level + 1 WHERE re_level>#{re_level} and board_code=#{board_code} and re_group=#{re_group}
+    </update>
+    
+    <!-- 댓글 작성 -->
+    <insert id="writeComment">
+    	INSERT INTO comment(board_code, comment_id, comment_password, comment_content, comment_write_date, re_group, re_level, re_step, chk) 
+   		VALUES (#{board_code}, #{comment_id}, #{comment_password}, #{comment_content}, now(), #{cnt}+1, 1, 1, 0)
+    </insert>
+    
+    <!-- 댓글 수정 -->
+    <update id="rewriteComment">
+    	UPDATE comment SET comment_content=#{comment_content} WHERE comment_code=#{comment_code}
+    </update>
+    
+    <!-- 댓글 삭제 -->
+    <update id="commentChk" parameterType="PagingDTO" >
+    	UPDATE comment SET chk=#{p.num} WHERE comment_code=#{p.comment_code}
+    </update>
+    
+    <!-- 대댓글 달렸는지 여부 -->
+    <select id="rereChk" resultType="int">
+    	SELECT count(*) from comment where re_group=#{re_group}
+    </select>
+    
+    <!-- 대댓글 작성 -->
+    <insert id="rerewrite">
+    	INSERT INTO comment(board_code, comment_id, comment_password, comment_content, comment_write_date, re_group, re_level, re_step, chk) 
+		VALUES (#{board_code}, #{comment_id}, #{comment_password}, #{comment_content}, now(), #{re_group}, #{re_level}+1, #{re_step}+1, 0)
+    </insert>
+    
+    <!-- 게시글 수정하기 -->
+    <update id="updateBoard">
+    	UPDATE board SET content=#{content}, title=#{title} WHERE board_code=#{board_code}
+    </update>
+    
+    <!-- 게시글 삭제 -->
+    <update id="deleteWrite">
+    	UPDATE board SET board_chk=1 WHERE board_code=#{board_code}
+    </update>
+    
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

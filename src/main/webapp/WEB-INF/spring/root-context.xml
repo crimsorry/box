@@ -7,10 +7,10 @@
     
     <!-- MySQL dataSource -->
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"> 
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
-        <property name="url" value="jdbc:mysql://localhost:3307/printC?useSSL=false"/> 
-        <property name="username" value="root"/> 
-        <property name="password" value="root"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://49.247.35.220:3306/printc?useSSL=false"/>
+		<property name="username" value="noksm2"/>
+		<property name="password" value="Nok1235!"/>
     </bean>
                 
     <!-- MyBatis -->

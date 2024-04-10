@@ -1,0 +1,50 @@
+@charset "UTF-8";
+h2{ width: 1200px; margin: 0 auto; margin-top: 50px; margin-bottom: 30px; text-align: left; }
+h2 label{ margin-left: 450px; }
+h2 a{ text-decoration: none; color: black;  }
+span a{ color: black; text-decoration: none; }
+
+#free_box{ width: 1200px; margin: 0 auto; clear: both; }
+#title{ width: 1200px; height: 100px; border: 1px solid black; }
+#title p:first-of-type{ margin-left: 15px; }
+#title p:last-of-type{ margin-left: 15px; margin-right: 15px; }
+#span{ float: right; }
+#content{ clear: both; width: 1200px; height: 400px; border: 1px solid black; }
+#content p{ margin: 15px; }
+
+#comment{ margin-top: 15px; width: 1200px; }
+#comment p:nth-of-type(2){ text-align: center; }
+#comment p:nth-of-type(3){ text-align: center; }
+#re_comment, .inComment{ width: 1200px;  }
+.inComment{  border-top: 1px solid black; padding-top: 9px; height: 30px; }
+.inComment:last-of-type{ border-bottom: 1px solid black; }
+#re_comment span, label{ font-size: 0.9em; }
+#re_comment label{ color: #777777;  }
+#re_comment span:first-of-type { color: #777777; display: inline-block; width: 140px; height: 30px;}
+#re_comment span:nth-of-type(2) { display: inline-block; width: 780px; height: 30px; cursor: pointer; }
+#re_comment span:last-of-type { color: #777777; float: right; display: inline-block; width: 150px; height: 30px; margin-right: 5px;}
+#re_comment span:nth-of-type(4){ color: #777777; float: right; margin-top: 3px; margin-right: 5px; cursor: pointer; }
+#re_comment span:nth-of-type(3){ color: #777777; float: right; margin-top: 3px; margin-right: 5px; cursor: pointer; }
+
+.inNopeComment{ background: lightgray; }
+
+#re_comment .blankTr { display: inline-block; margin-left: 40px; width: 100px; height: 30px;}
+fas{ cursor: pointer; }
+
+.write{ width: 1200px; height: 135px; margin-bottom: 4px; border: 1px solid black; clear: both; }
+.write div{ display: inline-block; vertical-align: top; }
+.re, .rere{ display:none; }
+#left, #releft, #rereleft{ width: 220px; }
+#left input, #releft input, #rereleft input{ width: 200px; height: 28px; margin: 10px 0px 0 10px; }
+#comment_content, #recomment_content, #rerecomment_content{ width: 955px; height: 73px; margin-top: 10px; }
+#commitSubmit, #recommitSubmit, #rerecommitSubmit, #fix{ 
+	float: right; width: 90px; height: 30px; border: none; border-radius: 5px; margin: 10px 12px; background: #c32148; color: white; cursor: pointer; }
+#fix{ margin-top: 10px;  }
+#del{ float: right; width: 90px; height: 30px; border: none; border-radius: 5px; margin-top: 10px; margin-bottom: 10px; background: lightgray; cursor: pointer; margin-left: 10px; }
+
+#btn_box { margin: 0 auto; width: 200px; margin-top: 30px; }
+.btns{ border: none; border-radius: 5px; background: lightgray; width: 25px; height: 25px; cursor: pointer;}
+
+#back{ float: left; margin-top: 25px; width: 100px; height: 30px; background: lightgray; color: black; border: none; border-radius: 5px; cursor: pointer; }
+
+

@@ -14,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.yuhan.test.dto.BoardDTO;
 import com.yuhan.test.dto.OrderDTO;
 import com.yuhan.test.dto.PagingDTO;
 import com.yuhan.test.service.LoginService;
@@ -56,12 +55,6 @@ public class UserController {
         String code = df.format(cal.getTime()) + "P" + blank + order_code;
         odto.setOrder_code(code);
         odto.setCompany_code(no);
-        
-        System.out.println("주문번호: " + odto.getOrder_code());
-        System.out.println("회사번호: " + odto.getCompany_code());
-        System.out.println("박스번호: " + odto.getBox_code());
-        System.out.println("주문일: " + odto.getOrder_date());
-        System.out.println("주문갯수: " + odto.getOrder_cnt());
 		
 		service.ordered(odto);
 		

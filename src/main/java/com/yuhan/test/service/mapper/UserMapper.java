@@ -1,6 +1,5 @@
 package com.yuhan.test.service.mapper;
 
-import com.yuhan.test.dto.CompanyDTO;
 import com.yuhan.test.dto.OrderDTO;
 import com.yuhan.test.dto.PagingDTO;
 

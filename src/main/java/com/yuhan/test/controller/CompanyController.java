@@ -113,8 +113,6 @@ public class CompanyController {
     	String now = transFormat.format(date); 
     	cdto.setModify_date(now);
     	cdto.setModifier((String)session.getAttribute("company_name"));
-    	System.out.println("lat: " + cdto.getLat());
-    	System.out.println("lng: " + cdto.getLng());
     	if(cdto.getLat()=="" && cdto.getLng()=="" || cdto.getLat().equals("0") && cdto.getLng().equals("0") || cdto.getLat()==null && cdto.getLng()==null) {
 			cdto.setLat(null);
 			cdto.setLng(null);

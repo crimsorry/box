@@ -1,0 +1,52 @@
+@charset "UTF-8";
+h2{ text-align: center; margin-top: 30px; width: 100%; }
+h5{ margin-left: 60px; margin-top: 25px; }
+h2 a{ text-decoration: none; color: black;  }
+span a{ color: black; text-decoration: none; }
+
+/*네비게이션*/
+#navBar{ position: absolute; top: 23px; left: 22px; font-size: 1.5em; cursor: pointer; }
+#navBox{ width: 250px; height: 100%; position: absolute; top: 0; left: -250px; background: white; opacity: 0; }
+#navBox i{ margin: 20px 0 0 20px; font-size: 1.9em; cursor: pointer; }
+#navBox ul{ margin-top: 50px; margin-left: -15px; }
+#navBox ul li{  list-style: none; margin-bottom: 25px;  }
+#navBox ul li a{ text-decoration: none; color: black; font-weight: bold; }
+#navBox ul li:last-of-type a{ color: brown; }
+#navBox ul li a:hover{ border-bottom: 1px solid black; color: brown; transition: all 0.5s ease-in; }
+.noneBox{ position: absolute; width: 100%; height: 100%; top: 0; left: 0;  background: rgba(0, 0, 0, 0.5); display: none; z-index: 2; }
+
+table{ border-collapse: collapse; }
+#writeBtn{ width: 90px; height: 30px; border: none; border-radius: 5px; float: right; margin-right: 352px; margin-bottom: 10px; background: #c32148; color: white; cursor: pointer; }
+.noneTr{ visibility: hidden; }
+#btn_box { margin: 0 auto; width: 200px; margin-top: 30px; }
+.btns{ border: none; border-radius: 5px; background: lightgray; width: 25px; height: 25px; cursor: pointer; }
+#free_box{ width: 1200px; margin: 0 auto; }
+#free { width: 1200px; height: 660px; margin: 0 auto; }
+#free tr { height: 30px; }
+#free tr:hover:not(tr:first-of-type){ cursor: pointer; }
+#free th{ background: #69717c; color: white; }
+#free tr td{ text-align: center; }
+#free tr td:first-of-type{ width: 90px; }
+#free tr td:nth-of-type(2){ width: 700px; text-align: left; padding-left: 20px; }
+#free tr td:nth-of-type(3){ width: 100px; }
+#free tr td:nth-of-type(4){ width: 100px; }
+#free tr td:nth-of-type(5){ width: 40px; }
+
+#write_back{ display: none; position: absolute; width: 100%; height: 100%; top: 0; left: 0;  background: rgba(0, 0, 0, 0.5); }
+#write_white{ width: 1000px; height: 690px; margin: 0 auto; margin-top: 75px; background: white; border-radius: 5px; }
+#write{ width: 900px; height: 650px; margin: 0 auto; }
+#write h2{ font-size: 20px; font-weight: bold; background: white; margin-top: 120px; margin-bottom: 10px; padding-top: 40px;}
+#write h2 span{ float: right; }
+#write h2 span a{ color: black; text-decoration: none; }
+
+#writetitle{ width: 900px; height: 100px; border: 1px solid black; border-bottom: none; }
+#writetitle #title{ width: 860px; margin-left: 15px; }
+#writetitle #id{ width: 420px; margin-left: 15px; }
+#writetitle #password { width: 420px; margin-left: 5px; }
+#content{ width: 900px; height: 400px; border: 1px solid black; }
+#content textarea{ width: 860px; margin-left: 15px; height: 365px;}
+
+#write input[type=submit]{ float: right; width: 900px; height: 30px; border: none; border-radius: 5px; margin-top: 10px; margin-bottom: 10px; background: #c32148; color: white; cursor: pointer; }
+
+
+

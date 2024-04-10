@@ -2,7 +2,6 @@ package com.yuhan.test.controller;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -68,15 +67,12 @@ public class ExcelController {
         if(iterator.hasNext()) {
             file = request.getFile(iterator.next());
         }
-        System.out.println("file: " + file);
         String msg = service.uploadExcelFile(file, (String)session.getAttribute("company_name"));
         
-        System.out.println("controller: " + msg);
         model.addAttribute("msg", msg); // 엑셀 업로드 실패/성공 메세지
         model.addAttribute("seemsg", 1); // 메세지 보여주기!
         
         msg = URLEncoder.encode(msg , "UTF-8");
-        System.out.println("encode msg: " + msg);
         
         return msg;
         

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yuhan.test.dto.BoardDTO;
-import com.yuhan.test.dto.CompanyDTO;
 import com.yuhan.test.dto.PagingDTO;
 import com.yuhan.test.service.BoardService;
 
@@ -141,9 +140,7 @@ public class BoardController {
 	@RequestMapping(value = "deleteComment")
 	public String deleteComment(Model model, BoardDTO bdto, PagingDTO pdto) throws Exception{
 		
-		System.out.println("와~");
 		int chk = service.rereChk(bdto.getRe_group());
-		System.out.println(chk);
 		
 		if(chk>1) {
 			Map<String, Integer> p = new HashMap<String, Integer>();
@@ -178,7 +175,6 @@ public class BoardController {
 	public String rereComment(Model model, BoardDTO bdto) throws Exception{
 		
 		int maxFirstLevel = service.maxFirstLevel(bdto);
-		System.out.println("maxFirstLevel: " + maxFirstLevel);
 		
 		bdto.setRe_level(maxFirstLevel);
 		service.rerePlus(bdto);

@@ -3,7 +3,6 @@ package com.yuhan.test.service.mapper;
 import java.util.List;
 
 import com.yuhan.test.dto.BoardDTO;
-import com.yuhan.test.dto.CompanyDTO;
 import com.yuhan.test.dto.PagingDTO;
 
 public interface BoardMapper {

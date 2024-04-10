@@ -16,7 +16,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.yuhan.test.dto.BoardDTO;
 import com.yuhan.test.dto.CompanyDTO;
 import com.yuhan.test.dto.OrderDTO;
 import com.yuhan.test.dto.PagingDTO;
@@ -303,7 +302,6 @@ public class RequireController {
 			model.addAttribute("msg", "중복된 박스명입니다!");
 		}else {
 			String boxCode = service.maxBox();
-			System.out.println(boxCode);
 			int num = Integer.parseInt(boxCode)+1;
 			odto.setBox_code("B" + num);
 			
@@ -328,7 +326,6 @@ public class RequireController {
 	        Calendar cal = Calendar.getInstance();
 	        DateFormat df = new SimpleDateFormat("yyMMdd");
 	        String code = df.format(cal.getTime()) + "P" + blank + order_code;
-	        System.out.println("code: " + code);
 	        odto.setOrder_code(code);
 	        
 			uservice.orderIn(odto);
