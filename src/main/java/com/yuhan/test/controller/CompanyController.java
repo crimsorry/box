@@ -276,7 +276,7 @@ public class CompanyController {
 		return "index";
 	}
 	
-	// 메인ㄱㄱ
+	// 메인
     @RequestMapping(value="main")
     public String main(Model model, PagingDTO pdto, HttpSession session) throws Exception {
     	
@@ -320,7 +320,7 @@ public class CompanyController {
         return "index"; // index.jsp로 이동
     }
     
-    // 메인ㄱㄱ
+    // 메인
     @RequestMapping(value="main2")
     public String main2(Model model, PagingDTO pdto) throws Exception {
         return "redirect:main?btn=" + pdto.getBtn(); // index.jsp로 이동

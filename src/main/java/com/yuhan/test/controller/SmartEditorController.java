@@ -8,7 +8,7 @@ public class SmartEditorController {
 
 	@RequestMapping("/smarteditor")
 	public String smartEditor() {
-		return "aaa";
+		return "editor";
 	}
 	
 }

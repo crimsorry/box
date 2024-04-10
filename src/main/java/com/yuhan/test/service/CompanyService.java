@@ -83,8 +83,6 @@ public class CompanyService {
      */
 	// 다운로드
     public SXSSFWorkbook makeSimpleFruitExcelWorkbook(List<CompanyDTO> list) {
-    	SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
-        
         SXSSFWorkbook workbook = new SXSSFWorkbook();
         
         // 시트 생성
